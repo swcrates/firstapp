@@ -1,5 +1,5 @@
 <?php
-echo "Hello SWE 432 class!";
+echo "Hello SWE 432 class!!!!!!!";
 
 // require __DIR__ . '/../src/db.php';
 // $stmt = db()->prepare('INSERT INTO messages (name, body) VALUES (?, ?)');
