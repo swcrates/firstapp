@@ -1,6 +1,6 @@
 <?php
 echo "Hello SWE 432 class!!!!!!!";
-echo "<br>DB enabled 22222";
+echo "<br>DB enabled Oct 29";
 
 // require __DIR__ . '/../src/db.php';
 //
