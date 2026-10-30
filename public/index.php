@@ -1,20 +1,26 @@
+<!DOCTYPE html>
 <?php
-
-echo "Hello SWE 432 class!!!!!!!";
-echo "<br>DB enabled<br>Oct 29";
-
 require __DIR__ . '/../src/db.php';
-$name = $_GET['name'] ?? "no name";
-$body = $_GET['body'] ?? "no body";
-$stmt = db()->prepare('INSERT INTO messages (name, body) VALUES (?, ?)');
-$stmt->execute([$name, $body]);
-$rows = db()->query('SELECT * FROM messages ORDER BY id DESC')->fetchAll();
 
-foreach ($rows as $row)
+if (isset($_GET['name']) && isset($_GET['message']))
 {
-    echo "<p>" . $row['name'] . " " . $row['body'];
+    $stmt = db()->prepare('INSERT INTO messages (name, message) VALUES (?, ?)');
+    $stmt->execute([$_GET['name'], $_GET['message']]);
 
-        // htmlspecialchars($row['name'], ENT_QUOTES, 'UTF-8')
-        // htmlspecialchars($row['body'], ENT_QUOTES, 'UTF-8')
+    echo "Message \"" . $_GET['message'] . "\" submitted by " . $_GET['name'];
+}
+else
+{
+    echo "<h1>List of messages</h1>";
+
+    $rows = db()->query('SELECT * FROM messages ORDER BY id DESC')->fetchAll();
+
+    foreach ($rows as $row)
+    {
+        echo "<p>" . $row['name'] . " " . $row['message'];
+
+            // htmlspecialchars($row['name'], ENT_QUOTES, 'UTF-8')
+            // htmlspecialchars($row['body'], ENT_QUOTES, 'UTF-8')
+    }
 }
 ?>
