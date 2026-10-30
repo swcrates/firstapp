@@ -14,6 +14,7 @@ echo "ok4<br>";
 foreach ($rows as $row)
 {
     echo "<p>" . $row['name'] . " " . $row['body'];
+
         // htmlspecialchars($row['name'], ENT_QUOTES, 'UTF-8')
         // htmlspecialchars($row['body'], ENT_QUOTES, 'UTF-8')
 }
