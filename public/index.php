@@ -2,7 +2,8 @@
 echo "Hello SWE 432 class!!!!!!!";
 echo "<br>DB enabled<br>Oct 29";
 
-require __DIR__ . '/../src/db.php';
+// require __DIR__ . '/../src/db.php';
+require '../src/db.php';
 echo "ok1<br>";
 // $stmt = db()->prepare('INSERT INTO messages (name, body) VALUES (?, ?)');
 echo "ok2<br>";
